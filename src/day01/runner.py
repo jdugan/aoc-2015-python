@@ -29,11 +29,11 @@ class Day01:
     # Private Methods
     # -----------------------------------------------------
 
-    def __char_to_increment(self, c):
+    def __char_to_increment(_, c):
         if c == "(":
             return 1
         return -1
 
-    def __data(self):
+    def __data(_):
         lines = Reader().to_lines("data/day01/input.txt")
         return [s for s in lines[0]]
