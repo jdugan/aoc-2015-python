@@ -5,7 +5,7 @@ class Day00:
     # Public Methods
     # -----------------------------------------------------
 
-    def day(self):
+    def day(_):
         return 0
 
     def puzzle1(self):
@@ -19,6 +19,6 @@ class Day00:
     # Private Methods
     # -----------------------------------------------------
 
-    def __data(self):
+    def __data(_):
         lines = Reader().to_lines("data/day00/input.txt")
         return lines

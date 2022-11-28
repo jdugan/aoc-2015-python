@@ -23,12 +23,12 @@ class Day02:
 
     #========== CALCULATIONS ===============================
 
-    def __calculate_paper_size(self, dims):
+    def __calculate_paper_size(_, dims):
         base  = (2 * dims[0] * dims[1]) + (2 * dims[0] * dims[2]) + (2 * dims[1] * dims[2])
         extra = dims[0] * dims[1]
         return base + extra
 
-    def __calculate_ribbon_size(self, dims):
+    def __calculate_ribbon_size(_, dims):
         base  = (2 * dims[0]) + (2 * dims[1])
         extra = dims[0] * dims[1] * dims[2]
         return base + extra
@@ -36,7 +36,7 @@ class Day02:
 
     #========== DATA ======================================
 
-    def __data(self):
+    def __data(_):
         lines = Reader().to_lines("data/day02/input.txt")
         dims  = []
         for line in lines:
