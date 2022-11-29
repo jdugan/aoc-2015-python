@@ -1,0 +1,24 @@
+from src.utility.reader import Reader
+
+class Day06:
+    # -----------------------------------------------------
+    # Public Methods
+    # -----------------------------------------------------
+
+    def day(_):
+        return 6
+
+    def puzzle1(self):
+        return -1
+
+    def puzzle2(self):
+        return -2
+
+
+    # -----------------------------------------------------
+    # Private Methods
+    # -----------------------------------------------------
+
+    def __data(_):
+        lines = Reader().to_lines("data/day06/input.txt")
+        return lines
