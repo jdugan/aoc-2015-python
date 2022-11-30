@@ -7,6 +7,8 @@ from src.day06.runner import Day06
 from src.day07.runner import Day07
 from src.day08.runner import Day08
 from src.day09.runner import Day09
+from src.day10.runner import Day10
+from src.day11.runner import Day11
 
 # ---------------------------------------------------------
 # Daily Tests
@@ -47,3 +49,11 @@ def test_day08():
 def test_day09():
     assert Day09().puzzle1() == 117
     assert Day09().puzzle2() == 909
+
+def test_day10():
+    assert Day10().puzzle1() == 360154
+    assert Day10().puzzle2() == 5103798
+
+def test_day11():
+    assert Day11().puzzle1() == "hxbxxyzz"
+    assert Day11().puzzle2() == "hxcaabcc"
