@@ -5,13 +5,15 @@ from src.day04.runner import Day04
 from src.day05.runner import Day05
 from src.day06.runner import Day06
 from src.day07.runner import Day07
+from src.day08.runner import Day08
+from src.day09.runner import Day09
 
 # ---------------------------------------------------------
 # Executable
 # ---------------------------------------------------------
 
 if __name__ == "__main__":
-    runner = Day07()
+    runner = Day09()
 
     print("")
     print(f"DAY {runner.day()}:")
