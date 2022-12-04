@@ -10,6 +10,8 @@ from src.day09.runner import Day09
 from src.day10.runner import Day10
 from src.day11.runner import Day11
 from src.day12.runner import Day12
+from src.day13.runner import Day13
+from src.day14.runner import Day14
 
 # ---------------------------------------------------------
 # Daily Tests
@@ -62,3 +64,11 @@ def test_day11():
 def test_day12():
     assert Day12().puzzle1() == 191164
     assert Day12().puzzle2() == 87842
+
+def test_day13():
+    assert Day13().puzzle1() == 733
+    assert Day13().puzzle2() == 725
+
+def test_day14():
+    assert Day14().puzzle1() == -1
+    assert Day14().puzzle2() == -2
