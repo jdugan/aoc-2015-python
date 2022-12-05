@@ -73,9 +73,9 @@ class Day06:
         instrs    = []
 
         for line in raw_lines:
-            match    = re.findall(r'(toggle|turn on|turn off) (\d\d?\d?),(\d\d?\d?) through (\d\d?\d?),(\d\d?\d?)', line)
-            captures = match[0]
-            instr    = (captures[0], int(captures[1]), int(captures[2]), int(captures[3]), int(captures[4]))
+            match  = re.search(r'(toggle|turn on|turn off) (\d\d?\d?),(\d\d?\d?) through (\d\d?\d?),(\d\d?\d?)', line)
+            groups = match.groups()
+            instr  = (groups[0], int(groups[1]), int(groups[2]), int(groups[3]), int(groups[4]))
             instrs.append(instr)
 
         return instrs
