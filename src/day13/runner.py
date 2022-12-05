@@ -72,8 +72,8 @@ class Day13:
         curr  = None
 
         for line in self.__data():
-            match = re.findall(r'(\w+) would (gain|lose) (\d+) happiness units by sitting next to (\w+)', line)
-            name1, sign, amount, name2 = match[0]
+            match = re.search(r'(\w+) would (gain|lose) (\d+) happiness units by sitting next to (\w+)', line)
+            name1, sign, amount, name2 = match.groups()
 
             if name1 != curr:
                 curr = name1

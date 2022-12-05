@@ -54,8 +54,8 @@ class Day09:
     def __nodes(self):
         nodes = {}
         for line in self.__data():
-            match     = re.findall(r'^(\w+) to (\w+) = (\d+)$', line)
-            c1, c2, d = match[0]
+            match     = re.search(r'^(\w+) to (\w+) = (\d+)$', line)
+            c1, c2, d = match.groups()
 
             n1        = nodes[c1] if c1 in nodes else {}
             n1[c2]    = int(d)

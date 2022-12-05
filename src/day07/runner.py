@@ -79,18 +79,18 @@ class Day07:
 
     def __parse(self, line):
         # assignment
-        match = re.findall(r'^(\w+) -> ([a-z]+)$', line)
-        if (len(match)):
-            key, wire = match[0]
+        match = re.search(r'^(\w+) -> ([a-z]+)$', line)
+        if (match):
+            key, wire = match.groups()
             try:
                 return (wire, "assign", set(), int(key))
             except:
                 return (wire, "assign", set({key}), None)
 
         # and
-        match = re.findall(r'^(\w+) AND ([a-z]+) -> ([a-z]+)$', line)
-        if (len(match)):
-            key1, key2, wire = match[0]
+        match = re.search(r'^(\w+) AND ([a-z]+) -> ([a-z]+)$', line)
+        if (match):
+            key1, key2, wire = match.groups()
             keys = set({key2})
             val  = None
             try:
@@ -101,27 +101,27 @@ class Day07:
             return (wire, "and", keys, val)
 
         # or
-        match = re.findall(r'^([a-z]+) OR ([a-z]+) -> ([a-z]+)$', line)
-        if (len(match)):
-            key1, key2, wire = match[0]
+        match = re.search(r'^([a-z]+) OR ([a-z]+) -> ([a-z]+)$', line)
+        if (match):
+            key1, key2, wire = match.groups()
             return (wire, "or", set({key1, key2}), None)
 
         # lshift
-        match = re.findall(r'^([a-z]+) LSHIFT (\d+) -> ([a-z]+)$', line)
-        if (len(match)):
-            key, val, wire = match[0]
+        match = re.search(r'^([a-z]+) LSHIFT (\d+) -> ([a-z]+)$', line)
+        if (match):
+            key, val, wire = match.groups()
             return (wire, "lshift", set({key}), int(val))
 
         # rshift
-        match = re.findall(r'^([a-z]+) RSHIFT (\d+) -> ([a-z]+)$', line)
-        if (len(match)):
-            key, val, wire = match[0]
+        match = re.search(r'^([a-z]+) RSHIFT (\d+) -> ([a-z]+)$', line)
+        if (match):
+            key, val, wire = match.groups()
             return (wire, "rshift", set({key}), int(val))
 
         # not
-        match = re.findall(r'^NOT ([a-z]+) -> ([a-z]+)$', line)
-        if (len(match)):
-            key, wire = match[0]
+        match = re.search(r'^NOT ([a-z]+) -> ([a-z]+)$', line)
+        if (match):
+            key, wire = match.groups()
             return (wire, "not", set({key}), None)
 
         print(line)
