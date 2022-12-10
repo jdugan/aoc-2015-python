@@ -22,5 +22,4 @@ class Day00:
     #========== DATA ======================================
 
     def __data(_):
-        lines = Reader().to_lines("data/day00/input.txt")
-        return lines
+        return Reader().to_lines("data/day00/input.txt")
