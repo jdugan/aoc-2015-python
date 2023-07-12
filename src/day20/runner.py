@@ -23,7 +23,6 @@ class Day20:
             hsum  = sum(hs)
         return num
 
-    # 887040 => too high
     def puzzle2(self):
         limit      = self.__data()//11 + 1
         step       = 1
