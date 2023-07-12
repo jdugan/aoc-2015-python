@@ -12,22 +12,20 @@ class Day19:
 
     def puzzle1(self):
         commands  = self.__commands()
-        molecules = { self.__medicine() }
-        molecules = self.__permutate(molecules, commands)
+        molecules = self.__expand({ self.__medicine() }, commands)
         return len(molecules)
 
     def puzzle2(self):
-        commands  = self.__inverted_commands()
-        molecules = { self.__medicine() }
-        goal      = "e"
-        count     = 0
-        while goal not in molecules:
-            molecules = self.__permutate(molecules, commands, goal)
-            count     = count + 1
-            # waaaaay too slow
-            if count > 3:
-                break
-        return count
+        commands  = self.__commands()
+        medicine  = self.__medicine()
+        shortest  = 1000000
+        steps     = 0
+        molecules = { "e": 0 }
+        # while len(molecules) > 0:
+        #     molecules = self.__expand(molecules, commands, limit)
+        #     steps     = steps + 1
+        #     print(steps, molecules)
+        return -2
 
 
     # -----------------------------------------------------
@@ -36,14 +34,14 @@ class Day19:
 
     #========== MACHINE ===================================
 
-    def __permutate(self, old_molecules, commands):
+    def __expand(self, molecules, commands):
         new_molecules = set();
-        for input in old_molecules:
+        for molecule in molecules:
             for k, varr in commands.items():
-                for match in re.finditer(rf"({k})", input):
+                for match in re.finditer(rf"({k})", molecule):
                     i1, i2 = match.span()
-                    s1 = input[:i1]
-                    s2 = input[i2:]
+                    s1 = molecule[:i1]
+                    s2 = molecule[i2:]
                     for v in varr:
                         new_molecules.add(f"{s1}{v}{s2}")
         return new_molecules;
@@ -54,21 +52,16 @@ class Day19:
     def __data(_):
         return Reader().to_lines("data/day19/input.txt")
 
-    def __commands(self, invert=False):
+    def __commands(self):
         cmds = {}
         for line in self.__data():
             m = re.search(r'(\w+) => (\w+)', line)
             if m is not None:
                 k, v = m.groups()
-                if invert:
-                    k, v = [v, k]
                 if k not in cmds:
                     cmds[k] = []
                 cmds[k].append(v)
         return cmds
-
-    def __inverted_commands(self):
-        return self.__commands(True)
 
     def __medicine(self):
         return self.__data().pop()
