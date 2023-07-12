@@ -41,23 +41,15 @@ class Day21:
 
     def __fight(self, player, boss):
         b_hp     = boss["hp"]
-        b_damage = max(0, boss["damage"] - player["armor"])
+        b_damage = max(1, boss["damage"] - player["armor"])
         p_hp     = player["hp"]
-        p_damage = max(0, player["damage"] - boss["armor"])
-
-        if b_damage == 0 and p_damage == 0:
-            return "stalemate"
-        elif b_damage == 0:
-            return "player"
-        elif p_damage == 0:
+        p_damage = max(1, player["damage"] - boss["armor"])
+        b_turns  = math.ceil(p_hp/b_damage)
+        p_turns  = math.ceil(b_hp/p_damage)
+        if b_turns < p_turns:
             return "boss"
         else:
-            b_turns  = math.ceil(p_hp/b_damage)
-            p_turns  = math.ceil(b_hp/p_damage)
-            if b_turns < p_turns:
-                return "boss"
-            else:
-                return "player"
+            return "player"
 
     def __players(self, hp):
         # rings = itertools.combinations(self.__shop_rings(), 0)
