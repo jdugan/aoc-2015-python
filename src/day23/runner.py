@@ -1,12 +1,12 @@
 from src.utility.reader import Reader
 
-class Day00:
+class Day23:
     # -----------------------------------------------------
     # Public Methods
     # -----------------------------------------------------
 
     def day(_):
-        return 0
+        return 23
 
     def puzzle1(self):
         return -1
@@ -22,4 +22,4 @@ class Day00:
     #========== DATA ======================================
 
     def __data(_):
-        return Reader().to_lines("data/day00/input.txt")
+        return Reader().to_lines("data/day23/input.txt")

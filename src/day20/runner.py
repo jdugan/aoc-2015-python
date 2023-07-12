@@ -26,7 +26,7 @@ class Day20:
     def puzzle2(self):
         limit      = self.__data()//11 + 1
         step       = 1
-        num        = 850000 - step
+        num        = 875000 - step
         hsum       = 0
         while hsum < limit:
             num       += step

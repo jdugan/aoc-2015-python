@@ -19,13 +19,18 @@ from src.day18.runner import Day18
 from src.day19.runner import Day19
 from src.day20.runner import Day20
 from src.day21.runner import Day21
+from src.day22.runner import Day22
+from src.day23.runner import Day23
+from src.day24.runner import Day24
+from src.day25.runner import Day25
+
 
 # ---------------------------------------------------------
 # Executable
 # ---------------------------------------------------------
 
 if __name__ == "__main__":
-    runner = Day21()
+    runner = Day20()
 
     print("")
     print(f"DAY {runner.day()}:")
