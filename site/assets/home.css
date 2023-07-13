@@ -82,3 +82,7 @@
   visibility: hidden;
   width: 100%;
 }
+.calendar .calendar-lightbeam { visibility: hidden; color: #666666; }
+.calendar a.calendar-complete .calendar-lightbeam,
+.calendar a.calendar-verycomplete .calendar-lightbeam { visibility: visible; }
+.calendar a.calendar-verycomplete .calendar-lightbeam { color: #ffff66; text-shadow: 0 0 5px #ffff66; }
