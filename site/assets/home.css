@@ -1,16 +1,20 @@
-.calendar a.calendar-complete, .calendar a.calendar-verycomplete {
-  color: #009900;
-}
-.calendar a.calendar-day25.calendar-complete,
-.calendar a.calendar-day25.calendar-verycomplete{ color: #ffff66; }
-.calendar a.calendar-day25.calendar-verycomplete{ text-shadow: 0 0 5px #ffff66; }
+/*---------------------------------------------------------
+   main
+  ---------------------------------------------------------*/
 
-.calendar .calendar-trunk { color: #cccccc; }
+  .calendar a.calendar-complete, .calendar a.calendar-verycomplete {
+    color: #009900;
+  }
+  .calendar a.calendar-day25.calendar-complete,
+  .calendar a.calendar-day25.calendar-verycomplete{ color: #ffff66; }
+  .calendar a.calendar-day25.calendar-verycomplete{ text-shadow: 0 0 5px #ffff66; }
 
-.calendar a                       .calendar-ornament0 { color: inherit; }
-.calendar a                       .calendar-ornament1 { color: inherit; }
-.calendar a                       .calendar-ornament2 { color: inherit; }
-.calendar a                       .calendar-ornament3 { color: inherit; }
+  .calendar .calendar-trunk { color: #cccccc; }
+
+  .calendar a                       .calendar-ornament0 { color: inherit; }
+  .calendar a                       .calendar-ornament1 { color: inherit; }
+  .calendar a                       .calendar-ornament2 { color: inherit; }
+  .calendar a                       .calendar-ornament3 { color: inherit; }
 .calendar a.calendar-verycomplete .calendar-ornament0 { color: #0066ff; text-shadow: 0 0 5px #0066ff; }
 .calendar a.calendar-verycomplete .calendar-ornament1 { color: #ff9900; text-shadow: 0 0 5px #ff9900; }
 .calendar a.calendar-verycomplete .calendar-ornament2 { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
@@ -86,3 +90,104 @@
 .calendar a.calendar-complete .calendar-lightbeam,
 .calendar a.calendar-verycomplete .calendar-lightbeam { visibility: visible; }
 .calendar a.calendar-verycomplete .calendar-lightbeam { color: #ffff66; text-shadow: 0 0 5px #ffff66; }
+
+/*---------------------------------------------------------
+   santa and reindeer
+  ---------------------------------------------------------*/
+
+#caravan {
+  position: fixed;
+  left: -160px;
+  top: 7em;
+  animation: anim-caravan linear 20s infinite;
+  z-index: -1;
+}
+@keyframes anim-caravan {
+  0% { transform: translateX(0);     opacity: 1; }
+  95% { transform: translateX(96vw);  opacity: 1; }
+  100% { transform: translateX(100vw); opacity: 0; }
+}
+#caravan div {
+  position: absolute;
+  top: 0;
+  color: #aaaaaa;
+  animation: anim-reindeer ease 3.5s infinite;
+}
+@keyframes anim-reindeer {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+#caravan div:before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 6pt;
+}
+#caravan div:after {
+  content: "*";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 5pt;
+}
+#caravan #sleigh:before {
+  content: "J";
+  transform: scaleX(-1) rotate(90deg);
+  font-size: 10pt;
+  color: #990000;
+  top: 2px;
+}
+#caravan #sleigh:after {
+  content: none;
+}
+#caravan #rudolph:before {
+  color: #ff0000;
+  left: 5px;
+  top: 5px;
+  text-shadow: 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000;
+}
+#caravan #rudolph:after {
+  content: none;
+}
+
+/*---------------------------------------------------------
+   snowflakes
+  ---------------------------------------------------------*/
+
+.calendar-bkg {
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,.3) 100%);
+}
+.sf {
+  position: fixed;
+  animation: anim-sf0 linear 20s infinite;
+  z-index: -1;
+}
+.sf:before {
+  content: "*";
+}
+.sf.sf0 { color: #ffffff; }
+.sf.sf1 { color: #cccccc; animation-name: anim-sf1; }
+.sf.sf2 { color: #999999; animation-name: anim-sf2; }
+.sf.sf3 { color: #666666; animation-name: anim-sf3; }
+@keyframes anim-sf0 {
+  0%   { transform: translate(  0,     0) rotate(0)     scale(1.0, 1.0); }
+  95%  { transform: translate(8em, 100vh) rotate(1turn) scale(1.0, 1.0); }
+  100% { transform: translate(8em, 100vh) rotate(1turn) scale(0.0, 0.0); }
+}
+@keyframes anim-sf1 {
+  0%   { transform: translate(  0,     0) rotate(0)     scale(1.0, 1.0); }
+  95%  { transform: translate(6em, 100vh) rotate(1turn) scale(1.0, 1.0); }
+  100% { transform: translate(6em, 100vh) rotate(1turn) scale(0.0, 0.0); }
+}
+@keyframes anim-sf2 {
+  0%   { transform: translate(  0,     0) rotate(0)     scale(1.0, 1.0); }
+  95%  { transform: translate(4em, 100vh) rotate(1turn) scale(1.0, 1.0); }
+  100% { transform: translate(4em, 100vh) rotate(1turn) scale(0.0, 0.0); }
+}
+@keyframes anim-sf3 {
+  0%   { transform: translate(  0,     0) rotate(0)     scale(1.0, 1.0); }
+  95%  { transform: translate(2em, 100vh) rotate(1turn) scale(1.0, 1.0); }
+  100% { transform: translate(2em, 100vh) rotate(1turn) scale(0.0, 0.0); }
+}
