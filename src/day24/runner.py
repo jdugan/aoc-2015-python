@@ -1,5 +1,5 @@
 import itertools
-import numpy
+import math
 
 from src.utility.reader import Reader
 
@@ -14,13 +14,13 @@ class Day24:
     def puzzle1(self):
         weights = self.__weights()
         groups  = self.__coziest_groups(weights, 3)
-        qes     = [numpy.prod(g[0]) for g in groups]
+        qes     = [math.prod(g[0]) for g in groups]
         return min(qes)
 
     def puzzle2(self):
         weights = self.__weights()
         groups  = self.__coziest_groups(weights, 4)
-        qes     = [numpy.prod(g[0]) for g in groups]
+        qes     = [math.prod(g[0]) for g in groups]
         return min(qes)
 
 

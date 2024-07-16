@@ -20,7 +20,7 @@ The examples are representative of my thinking and coding style.
 
 ### Prerequisites
 
-The project requires `python 3.10.1`, but any reasonably current version of
+The project requires `python 3.12.4`, but any reasonably current version of
 Python will likely work. I tend to code done the middle of any language
 specification.
 
